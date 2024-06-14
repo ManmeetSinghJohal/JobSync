@@ -163,14 +163,14 @@ export const getCompaniesDetails = async (params: searchCompaniesParams) => {
     const employers = companies.data?.employers.slice(0, 3);
 
     // for each company, get the name, value (company id)
-    const employersObjs = employers.map((company: Company) => ({
+    const employersObjs = employers?.map((company: Company) => ({
       id: company.value,
       name: company.name,
     }));
 
     // for each company, get the logo, city, country from searchJobs
     const companyDetails = await Promise.all(
-      employersObjs.map(async (company: Company) => {
+      (employersObjs ?? []).map(async (company: Company) => {
         const response = await getSingleCompanyDetails({
           query,
           employer: company.id,
