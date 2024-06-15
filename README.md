@@ -1,8 +1,12 @@
 
 # JobSync
 
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
 ## 🌐 Demo
-Here is a working live demo:  [mj-portfolio-five.vercel.app/](https://mj-portfolio-five.vercel.app/) 
+Here is a working live demo:  [MJ's Portfolio](https://mj-portfolio-five.vercel.app/) 
 
 ## 📝 Description
 Welcome to my project! Here, I'll provide you with a brief overview of what inspired me to create it, why it solves a problem, and what I've learned throughout its development.
