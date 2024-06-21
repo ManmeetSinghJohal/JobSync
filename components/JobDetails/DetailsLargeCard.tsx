@@ -1,6 +1,5 @@
 /* eslint-disable camelcase */
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 import defaultLogo from "@/public/assets/icons/default-logo.svg";
@@ -12,6 +11,7 @@ import AboutCompany from "./AboutCompany";
 import Apply from "./Apply";
 import SaveJobButton from "./SaveJobButton";
 import { getJobDetails } from "@/lib/actions/companies.action";
+import SafeImage from "../SafeImage";
 
 const DetailsLargeCard = async ({ jobId }: { jobId: string }) => {
   const job = await getJobDetails(jobId);
@@ -35,8 +35,9 @@ const DetailsLargeCard = async ({ jobId }: { jobId: string }) => {
     <div className="m-5 mb-[36px] w-full rounded-2xl p-1 font-manrop dark:bg-darkBg-2">
       <div className="relative mb-7 h-48 rounded-t-3xl bg-[url('/images/detailsBg.png')] bg-cover bg-no-repeat lg:mb-[70px]">
         <div className="absolute bottom-[-14px] left-[10px] h-[46px] w-[46px] rounded border-2 border-white bg-white lg:bottom-[-41px] lg:left-[20px] lg:h-16 lg:w-16">
-          <Image
-            src={employerLogo || defaultLogo}
+          <SafeImage
+            defaultSrc={defaultLogo.src}
+            src={employerLogo}
             alt="logo"
             width={46}
             height={46}
