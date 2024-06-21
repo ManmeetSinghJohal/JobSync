@@ -107,7 +107,7 @@ const sortJobs = (data: Job[], sortType: string): Job[] => {
   }
 };
 
-export const getTotalPages = async (query: string) => {
+export const getTotalPages = async (query: string): Promise<number> => {
   let totalResults = 0;
   let page = 1;
   const maxResultsPerRequest = 200; // 20 num_pages x 10 results per page
@@ -125,7 +125,7 @@ export const getTotalPages = async (query: string) => {
 
       if (!response.ok) {
         console.error(`Error: ${response.status}`);
-        return [];
+        return 0;
       }
 
       const responseData = await response.json();
