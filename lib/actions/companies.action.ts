@@ -177,9 +177,9 @@ export const getCompaniesDetails = async (params: searchCompaniesParams) => {
         });
         return {
           ...company,
-          logo: response?.data[0].employer_logo,
-          city: response?.data[0].job_city,
-          country: response?.data[0].job_country,
+          logo: response?.data[0]?.employer_logo,
+          city: response?.data[0]?.job_city,
+          country: response?.data[0]?.job_country,
           vacancies: response?.data.length,
         };
       })
