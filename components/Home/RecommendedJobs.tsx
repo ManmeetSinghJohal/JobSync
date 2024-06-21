@@ -24,8 +24,6 @@ const RecommendedJobs = async () => {
     throw error;
   }
 
-  console.log({ results });
-
   return (
     <section className="mt-[30px] flex flex-col items-center justify-center gap-[14px] rounded-[10px] bg-white px-[15px] py-[21px] shadow dark:bg-darkBg-2 max-sm:mb-[51px]">
       {results?.length

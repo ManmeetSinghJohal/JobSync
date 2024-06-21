@@ -23,8 +23,6 @@ const Page = async ({ params: { id } }: CompanyDetailsInterface) => {
     query: "Web Developer",
   });
 
-  console.log(similarCompanies);
-
   return (
     <section className="mx-auto min-h-screen w-full lg:max-w-5xl xl:max-w-7xl ">
       <Link href="/">

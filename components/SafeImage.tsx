@@ -2,15 +2,22 @@
 import Image from "next/image";
 
 interface SafeImageProps {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-    className: string;
-    defaultSrc: string;
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  className: string;
+  defaultSrc: string;
 }
 
-const SafeImage = ({ src, alt, width, height, className, defaultSrc }: SafeImageProps) => {
+const SafeImage = ({
+  src,
+  alt,
+  width,
+  height,
+  className,
+  defaultSrc,
+}: SafeImageProps) => {
   return (
     <Image
       src={src || defaultSrc}
@@ -20,7 +27,6 @@ const SafeImage = ({ src, alt, width, height, className, defaultSrc }: SafeImage
       className={className}
       onError={(event) => {
         event.currentTarget.src = defaultSrc;
-        console.log(defaultSrc);
       }}
       unoptimized={true}
     />
