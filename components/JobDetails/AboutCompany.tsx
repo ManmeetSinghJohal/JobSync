@@ -1,9 +1,9 @@
 import React from "react";
-import Image from "next/image";
 
 import { AboutCompanyProps } from "@/types";
 import defaultLogo from "@/public/assets/icons/default-logo.svg";
 import SaveCompanyButton from "./SaveCompanyButton";
+import SafeImage from "../SafeImage";
 
 const AboutCompany = ({
   employerName,
@@ -18,13 +18,14 @@ const AboutCompany = ({
       <div className="mb-5 lg:mb-8 lg:flex lg:justify-between">
         <div className="flex items-center gap-3">
           <div className="h-[46px] w-[46px] rounded border-2 border-white bg-white">
-            <Image
-              src={employerLogo || defaultLogo}
-              alt="logo"
-              width={64}
-              height={64}
-              className=" h-full w-full object-contain"
-            />
+            <SafeImage
+            defaultSrc={defaultLogo.src}
+            src={employerLogo}
+            alt="logo"
+            width={64}
+            height={64}
+            className=" h-full w-full object-contain"
+          />
           </div>
           <div>
             <h4 className="text-base font-medium text-black dark:text-white">
